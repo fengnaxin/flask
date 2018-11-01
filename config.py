@@ -1,9 +1,10 @@
 import redis
+from flask import logging
 
 
 class Config(object):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = "mysql://root:@127.0.0.1:3306/test20"
+    SQLALCHEMY_DATABASE_URI = "mysql://root:@127.0.0.1:3306/information_20"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     # 设置redis主机
     REDIS_IP = "localhost"
@@ -20,15 +21,18 @@ class Config(object):
 
 
 # 开发模式
-class Developement(Config):
+class Development(Config):
     DEBUG = True
+    # LOG_LEVEL = logging.DEBUG
 
 
 # 上线模式
 class Production(Config):
     DEBUG = False
+    # LOG_LEVEL = logging.ERROR
+
 
 config_map = {
-    "develop":Developement(),
-    "production" :Production()
+    "develop": Development(),
+    "production": Production()
 }
