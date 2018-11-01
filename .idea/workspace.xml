@@ -272,6 +272,12 @@
       <change afterPath="$PROJECT_DIR$/info/static/news/tinymce/js/tinymce/themes/modern/theme.min.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/info/static/news/tinymce/js/tinymce/tinymce.min.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/info/templates/news/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/info/untils/captcha/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/info/untils/captcha/captcha.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/info/untils/captcha/fonts/Arial.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/info/untils/captcha/fonts/Georgia.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/info/untils/captcha/fonts/actionj.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/info/untils/response_code.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/logs/log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/day1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/day1.iml" afterDir="false" />
@@ -309,7 +315,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="gitignore" value="3" />
+          <entry key="gitignore" value="4" />
           <entry key="html" value="12" />
           <entry key="jpg" value="3" />
           <entry key="js" value="3" />
@@ -323,14 +329,14 @@
           <entry key="HTML" value="12" />
           <entry key="Image" value="13" />
           <entry key="JavaScript" value="3" />
-          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="PLAIN_TEXT" value="8" />
           <entry key="Python" value="140" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="4" />
-          <entry key="gitignore" value="19" />
+          <entry key="gitignore" value="20" />
           <entry key="js" value="10" />
           <entry key="py" value="2461" />
         </counts>
@@ -338,7 +344,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JavaScript" value="10" />
-          <entry key="PLAIN_TEXT" value="23" />
+          <entry key="PLAIN_TEXT" value="24" />
           <entry key="Python" value="2461" />
         </counts>
       </usages-collector>
@@ -358,14 +364,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/info/passport/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
+            <state relative-caret-position="199">
               <caret line="25" column="45" lean-forward="true" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -447,7 +462,6 @@
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/Config/__init__.py" />
         <option value="$PROJECT_DIR$/Config/views.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/info/index/__init__.py" />
         <option value="$PROJECT_DIR$/config.py" />
@@ -459,6 +473,7 @@
         <option value="$PROJECT_DIR$/info/untils/captcha/captcha.py" />
         <option value="$PROJECT_DIR$/info/static/news/js/main.js" />
         <option value="$PROJECT_DIR$/info/passport/views.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -468,7 +483,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
     <option name="x" value="201" />
     <option name="y" value="117" />
     <option name="width" value="2012" />
@@ -735,20 +750,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="201" y="117" width="2012" height="933" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.25641027" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.21319798" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.32818073" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.54458976" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5011905" side_tool="true" weight="0.28306264" />
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="4" />
       <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" sideWeight="0.49880952" visible="true" weight="0.2734694" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.49880952" weight="0.2734694" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -814,13 +829,6 @@
             <element signature="e#0#23#0" expanded="true" />
             <marker date="1540985815667" expanded="true" signature="831:1138" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -1067,11 +1075,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/info/passport/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
+        <state relative-caret-position="199">
           <caret line="25" column="45" lean-forward="true" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
