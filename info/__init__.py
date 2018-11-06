@@ -1,5 +1,6 @@
 from logging.handlers import RotatingFileHandler
-
+from flask_wtf.csrf import generate_csrf
+from flask_wtf.csrf import generate_csrf
 from flask import Flask
 import logging
 from flask_session import Session
@@ -20,7 +21,7 @@ logging.getLogger().addHandler(file_log_handler)
 
 # 创建mysql数据库对象
 db = SQLAlchemy()
-store_redis = redis.StrictRedis(host=Config.REDIS_IP, port=Config.REDIS_PORT)
+store_redis = None  # type:redis.StrictRedis
 
 
 def create_app(config):
@@ -32,16 +33,33 @@ def create_app(config):
     # 初始化数据库
     db.init_app(app)
     # 创建redis对象
-    # store_redis = redis.StrictRedis(host=Config.REDIS_IP, port=Config.REDIS_PORT)
-    # 开启CSRF保护，避免视图函数收到攻击
+    global store_redis
+    store_redis = redis.StrictRedis(host=Config.REDIS_IP, port=Config.REDIS_PORT, decode_responses="True")
     CSRFProtect(app)
     # 设置Session
     Session(app)
+
+    # 开启CSRF保护，避免视图函数收到攻击
+    @app.after_request
+    def after_request(response):
+        # 调用函数生成 csrf_token
+        csrf_token = generate_csrf()
+        # 通过 cookie 将值传给前端
+        response.set_cookie("csrf_token", csrf_token)
+        return response
+
+    # 导入自定义过滤器，并添加到模版中
+    from info.untils.common import do_classindex,do_data_cid
+    app.add_template_filter(do_classindex,"class_index")
+    app.add_template_filter(do_data_cid,"class_name")
+
     from .index import index_blu
     app.register_blueprint(index_blu)
-    from .index import favicon_blu
-    app.register_blueprint(favicon_blu)
+
     from .passport import passport_blu
     app.register_blueprint(passport_blu)
+
+    from .news import news_blue
+    app.register_blueprint(news_blue)
 
     return app

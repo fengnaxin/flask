@@ -7,7 +7,7 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = "mysql://root:@127.0.0.1:3306/information_20"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     # 设置redis主机
-    REDIS_IP = "localhost"
+    REDIS_IP = "127.0.0.1"
     REDIS_PORT = 6379
     # 设置密钥
     SECRET_KEY = "dsdsdsdsd"
