@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +7,9 @@
     <link rel="stylesheet" type="text/css" href="../../static/news/css/reset.css">
     <link rel="stylesheet" type="text/css" href="../../static/news/css/main.css">
     <script type="text/javascript" src="../../static/news/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../../static/news/js/main.js"></script>
     {% block detailjs_block %}{% endblock %}
-    <script type="text/javascript" src="../../static/news/js/index.js"></script>
+
 </head>
 <body>
 <div class="header_con">
@@ -39,15 +34,6 @@
             </div>
         {% endif %}
 
-
-
-
-
-
-
-
-
-
     </div>
 </div>
 
@@ -55,9 +41,12 @@
    {% block content_block %}{% endblock %}
     <div class="rank_con fr">
     {% block author_block %}{% endblock %}
-        <div class="rank_title">
+    {% block rank_title %}
+    <div class="rank_title">
             <h3>点击排行</h3>
         </div>
+    {% endblock %}
+
         <ul class="rank_list">
             {% for news in data.click_new_list %}
                 {#                <li><span>{{loop.index }}</span><a href="#">{{ news.title }}</a></li>#}
@@ -73,7 +62,11 @@
         </ul>
     </div>
 </div>
+{% block footer %}
+
 <div class="footer">
+
+
     <div class="footer_links">
         <a href="">关于我们</a>
         <span>|</span>
@@ -88,6 +81,7 @@
         电话：010-****888 京ICP备*******8号
     </p>
 </div>
+{% endblock %}
 
 <!-- 登录表单 -->
 <form class="login_form_con">

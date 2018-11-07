@@ -54,6 +54,7 @@ def index():
     # 获取当前用户id
     user_id = session.get("user_id")
     user = None
+    # 判断用户是否登录
     if user_id:
         try:
             # 通过user_id获取到用户的所有信息
@@ -74,7 +75,7 @@ def index():
     for temp in category:
         category_list.append(temp.to_dict())
 
-    print(category_list)
+
 
     data = {
         "user_info": user.to_dict() if user else None,
@@ -93,5 +94,5 @@ def index():
 
 @index_blu.route("/favicon.ico")
 def favicon():
-    # print("favicon")
+
     return current_app.send_static_file("news/favicon.ico")

@@ -1,13 +1,16 @@
 from logging.handlers import RotatingFileHandler
 from flask_wtf.csrf import generate_csrf
 from flask_wtf.csrf import generate_csrf
-from flask import Flask
+from flask import Flask, g,render_template
+
 import logging
 from flask_session import Session
 from config import Config, Development, Production, config_map
 import redis
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import CSRFProtect
+
+# from info.untils.common import user_login_data
 
 logging.basicConfig(level=logging.DEBUG)  # 调试debug级
 # 创建日志记录器，指明日志保存的路径、每个日志文件的最大大小、保存的日志文件个数上限
@@ -48,10 +51,20 @@ def create_app(config):
         response.set_cookie("csrf_token", csrf_token)
         return response
 
+    # 不存在的页面都指向404页面
+    from info.untils.common import user_login_data
+    @app.errorhandler(404)
+    @user_login_data
+    def page_not_found(error):
+        user = g.user
+        data = {"user_info": user.to_dict() if user else None}
+        return render_template('news/404.html', data=data)
+
+
     # 导入自定义过滤器，并添加到模版中
-    from info.untils.common import do_classindex,do_data_cid
-    app.add_template_filter(do_classindex,"class_index")
-    app.add_template_filter(do_data_cid,"class_name")
+    from info.untils.common import do_classindex, do_data_cid
+    app.add_template_filter(do_classindex, "class_index")
+    app.add_template_filter(do_data_cid, "class_name")
 
     from .index import index_blu
     app.register_blueprint(index_blu)

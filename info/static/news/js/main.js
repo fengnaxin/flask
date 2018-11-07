@@ -299,7 +299,7 @@ function sendSMSCode() {
 
 // 退出登陆
 function logout() {
-    alert("退出")
+
     $.get("/passport/logout", function (resp) {
         //刷新当前页面
         location.reload()
@@ -314,7 +314,7 @@ function logout() {
     // success: function (resp) {
     //     // 刷新当前界面
     //     location.reload()
-    }
+}
 
 
 // 调用该函数模拟点击左侧按钮
